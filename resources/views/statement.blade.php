@@ -46,7 +46,8 @@
                                     @foreach ($statements as $statement)
                                         <tr>
                                             <td>{{ $counter }}</td>
-                                            <td>{{ $statement->date }}</td>
+                                            <td>{{ date('d F Y h:i A', strtotime($statement->date)) }}</td>
+
                                             <td>{{ $statement->amount }}</td>
                                             <td>{{ $statement->tranfer_type }}</td>
                                              @if ($statement->type == 'transfer' && $statement->tranfer_type == 'debit')
